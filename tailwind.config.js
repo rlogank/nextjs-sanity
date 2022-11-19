@@ -7,11 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
+        dark: '#383C4A',
+        darker: '#2F343F',
+        darkest: '#2A2E38',
+        text: '#D3DAE3',
+        subtext: '#9198A4',
       },
       spacing: {
         28: '7rem',

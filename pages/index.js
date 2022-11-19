@@ -8,6 +8,7 @@ import { CMS_NAME } from '../lib/constants'
 import { indexQuery } from '../lib/queries'
 import { usePreviewSubscription } from '../lib/sanity'
 import { getClient, overlayDrafts } from '../lib/sanity.server'
+import Me from '../components/me'
 
 export default function Index({ allPosts: initialAllPosts, preview }) {
   const { data: allPosts } = usePreviewSubscription(indexQuery, {
@@ -19,11 +20,12 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>rlogank | Professional Web Development</title>
         </Head>
         <Container>
-          <Intro />
-          {heroPost && (
+          {/* <Intro /> */}
+          <Me/>
+          {/* {heroPost && (
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverImage}
@@ -33,7 +35,7 @@ export default function Index({ allPosts: initialAllPosts, preview }) {
               excerpt={heroPost.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
         </Container>
       </Layout>
     </>

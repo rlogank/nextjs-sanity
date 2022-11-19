@@ -1,28 +1,24 @@
-import { CMS_NAME, CMS_URL } from '../lib/constants'
+import Link from 'next/link';
+import {FaSun, FaMoon} from 'react-icons/fa'
+
 
 export default function Intro() {
-  return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
-      <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
-        Blog.
-      </h1>
-      <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        A statically generated blog example using{' '}
-        <a
-          href="https://nextjs.org/"
-          className="underline hover:text-success duration-200 transition-colors"
-        >
-          Next.js
-        </a>{' '}
-        and{' '}
-        <a
-          href={CMS_URL}
-          className="underline hover:text-success duration-200 transition-colors"
-        >
-          {CMS_NAME}
-        </a>
-        .
-      </h4>
-    </section>
-  )
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
+  ];
+  return <nav className="flex justify-between py-10 items-center">
+    <div className="flex items-center">
+      {navLinks.map((link) => (
+        <Link href={link.href} className="hover:text-white px-3.5 py-2 hover:bg-black hover:bg-opacity-25 active:bg-gray-200/75 rounded-md transition">{link.name}</Link>
+      ))}
+
+    </div>
+    <div>
+      <button>🌚</button>
+    </div>
+  </nav>;
 }
